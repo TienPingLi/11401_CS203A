@@ -7,7 +7,7 @@
 ---
 
 ## Student
-**Name:** TIEN,Ping-Li 田秉立
+**Name:** Ping-Li Tien
 **Student ID:** 1131427 
 **GitHub:** https://github.com/<your-username>
 
