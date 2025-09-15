@@ -9,7 +9,7 @@
 ## Student
 **Name:** Ping-Li Tien
 **Student ID:** 1131427 
-**GitHub:** https://github.com/<your-username>
+**GitHub:** https://github.com/TienPingLi
 
 ---
 
