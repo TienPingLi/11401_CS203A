@@ -24,3 +24,53 @@
   };
   printf("%d", array2d[1][2]); // 輸出 7
   ```
+- **三維陣列 (3D array)**
+  ```c
+  int array3d[2][3][4] = {
+    {{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}},
+    {{13, 14, 15, 16}, {17, 18, 19, 20}, {21, 22, 23, 24}}
+  };
+  printf("%d", array3d[1][2][3]); // 輸出 24
+  ```
+---
+## 3. 陣列 ADT (Abstract Data Type)
+
+- 定義：一組索引 (index) 與值 (value) 的對應。
+- 基本操作：
+  A-array,i-index,x-value
+  - `Create(n)` : 建立長度為 n 的陣列。
+  - `Retrieve(A, i)` : 取得索引 i 的元素。
+  - `Store(A, i, x)` ：在索引 i 儲存值 x。
+  - `Insert/Delete`：需位移其他元素，效率低。
+  - `Resize`：動態陣列才可調整大小。
+ 
+---
+## 4. 靜態與動態陣列
+
+- 靜態陣列 (Static array)：大小在編譯期決定，無法改變。
+- 動態陣列 (Dynamic array)：大小可於執行期 (runtime) 變動，需使用 `malloc` / `realloc` / `free`。
+```c
+int *array;
+int n = 10;
+array = (int*) malloc(n * sizeof(int));
+free(array);
+```
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
