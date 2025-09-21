@@ -1,0 +1,8 @@
+# array
+---
+## 基本概念 (Array Basics)
+-**陣列(array)**:連續記憶體位置中的元素集合
+-**特性:**
+  -固定大小 (Fixed size)
+  -隨機存取 (Random access)，透過索引 (index) 可直接存取，時間複雜度 O(1)。
+  -元素型別一致 (Same data type)，利於效率與儲存。
