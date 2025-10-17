@@ -175,3 +175,19 @@ public:
       * 串列中的最後一個節點的指標不指向 `NULL`，而是指向**第一個節點 (Head)**。
       * 優點：可以從任何一個節點開始遍歷整個串列，且沒有明顯的頭尾區分。
       * 循環鏈結串列又可分為：**單向循環**和**雙向循環**。
+------
+# 陣列與鏈結串列的比較（Array vs. Linked List）
+
+| **面向 (Aspect)** | **陣列 (Array)** | **鏈結串列 (Linked List)** |
+|--------------------|------------------|-----------------------------|
+| **記憶體配置 (Memory Allocation)** | 連續的記憶體區塊 (Contiguous block of memory) | 非連續，每個節點動態分配 (Non-contiguous, each node allocated dynamically) |
+| **大小 (Size)** | 固定（靜態），必須在宣告時定義（C語言中）<br>Fixed (static) – must be defined at declaration (in C) | 動態，可在執行期間增減<br>Dynamic – can grow/shrink at runtime |
+| **存取（索引）(Access / Indexing)** | 可直接以索引存取，O(1)<br>Direct access with index (O(1)) | 需逐一搜尋，O(n)<br>Sequential access only (O(n)) |
+| **插入／刪除 (Insertion / Deletion)** | 成本高，需要移動元素，O(n)<br>Costly (O(n)) due to shifting elements | 若已知節點指標，效率高，O(1)<br>Efficient (O(1)) if pointer to node is known |
+| **記憶體使用 (Memory Usage)** | 無額外開銷<br>No extra overhead | 需額外儲存指標<br>Requires extra memory for pointers |
+| **快取效能 (Cache Performance)** | 較佳（連續記憶體，快取友善）<br>Better (contiguous memory → cache friendly) | 較差（節點可能分散在記憶體中）<br>Worse (nodes may scatter in memory) |
+| **實作難易度 (Implementation Simplicity)** | 較簡單，容易使用<br>Easier to implement and use | 較複雜，需處理指標<br>More complex due to pointer handling |
+| **適用情境 (Use Cases)** | 適合資料大小已知且需頻繁隨機存取時<br>When size is known and frequent random access is needed | 適合需頻繁插入／刪除且大小不固定時<br>When frequent insertion/deletion is required and size is unpredictable |
+
+**11402 CS203A, COMPUTER SCIENCE & ENGINEERING, 元智大學**
+
