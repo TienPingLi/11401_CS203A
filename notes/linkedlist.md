@@ -189,5 +189,20 @@ public:
 | **實作難易度 (Implementation Simplicity)** | 較簡單，容易使用<br>Easier to implement and use | 較複雜，需處理指標<br>More complex due to pointer handling |
 | **適用情境 (Use Cases)** | 適合資料大小已知且需頻繁隨機存取時<br>When size is known and frequent random access is needed | 適合需頻繁插入／刪除且大小不固定時<br>When frequent insertion/deletion is required and size is unpredictable |
 
-**11402 CS203A, COMPUTER SCIENCE & ENGINEERING, 元智大學**
+-------
+# 陣列與鏈結串列的比較（Comparison: Array vs. Linked List）
+
+| **操作 (Operation)** | **動態陣列 (Array, Dynamic)** | **鏈結串列 (Linked List)** |
+|------------------------|-------------------------------|-----------------------------|
+| **依索引存取 (Access by index)** | O(1) | O(n)（必須逐一遍歷 / must traverse） |
+| **搜尋 (Search)** | O(n) | O(n) |
+| **在開頭插入 (Insert at front)** | O(n) | O(1) |
+| **在中間插入 (Insert at middle)** | O(n) | O(n) |
+| **在結尾插入 (Insert at end)** | O(1)（攤銷時間 / amortized） | O(n)\* 或 O(1)\*\* |
+| **刪除 (Delete)** | O(n) | O(n) 或 O(1)\*\*\*** |
+
+\* 若為單向鏈結串列（singly linked list），在結尾插入需遍歷整個串列 → O(n)  
+\*\* 若為雙向鏈結串列（doubly linked list）且尾端指標已知 → O(1)  
+\*\*\* 若已知節點指標（pointer to node），刪除可為 O(1)
+
 
