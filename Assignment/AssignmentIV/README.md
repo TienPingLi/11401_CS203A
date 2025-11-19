@@ -4,7 +4,7 @@
 學生需實作 hash 函式、分析其行為、評估效率，並了解其在電腦科學中的應用。
 
 **開發者:** 田秉立 (Ping-Li, Tien)   
-**電子郵件:** billytne0208@gmail.com
+**電子郵件:** billyten0208@gmail.com
 
 ---
 
