@@ -26,9 +26,19 @@ Email: billytne0208@gmail.com
 ### Non-integer Keys
 - Formula / pseudocode:
   ```text
-  [Your implementation here]
+  unsigned long hash = 0
+  // 將每個字元累加，乘以質數，形成散列值
+	for (char ch : str) {
+	hash = hash * 31 + static_cast<unsigned long>(ch); // a common choice is 31
+	}
+	hash = hash * 99999839 + 1234567; // a large prime number and an arbitrary c
+	if (hash < 0) hash = (-1)*hash; // ensure non-negative
+	return static_cast<int>(hash % m);  // basic division method
   ```
-- Rationale: [Explain your approach and its effectiveness for non-integer keys.]
+- Rationale:
+  1.字元累加與基數乘法：將每個字元都納入計算，並乘以常用基數 31，使字串中即使只有一個字元不同，也會產生不同的 hash 值，避免順序相似的字串落在同一槽位。  
+  2.乘以大質數並加上偏移常數：乘以大質數 99999839 並加上 1234567，打破與 hash table 大小 m 的整除規律，增加散列結果的變化，使不同字串更不容易出現相同索引。  
+  3.取絕對值：保證散列結果為非負，避免因整數溢出或負數 modulo 導致索引錯誤。  
 
 ## Experimental Setup
 - Table sizes tested (m): 10, 11, 37
