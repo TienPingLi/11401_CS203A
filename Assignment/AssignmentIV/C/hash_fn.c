@@ -14,14 +14,31 @@
  */
 
 #include "hash_fn.h"
+#include <stdio.h>
 
 int myHashInt(int key, int m) {
-    // TODO: replace with your own design
-    return key % m;  // division method example
+    long long int h;
+    h = (long long)key * 99999839  // 大質數
+        + 1234567;                 // 任意常數
+    if (h < 0) h = -h;             // 確保非負
+    key = (int)h;                  // C 風格轉型
+    return key % m;                // 取模得到索引
 }
+
 
 int myHashString(const char* str, int m) {
     unsigned long hash = 0;
-    // TODO: replace with your own design
-    return (int)(hash % m); // basic division method
+    int i = 0;
+    // 將每個字元累加，乘以質數 31
+    while (str[i] != '\0') {
+        hash = hash * 31 + (unsigned long)str[i];
+        i++;
+    }
+    // 乘大質數 + 加偏移常數
+    hash = hash * 99999839 + 1234567;
+    // 確保非負
+    if ((long long)hash < 0) {
+        hash = (unsigned long)(-1 * (long long)hash);
+    }
+    return (int)(hash % m);  // 取模得到索引
 }
