@@ -1,196 +1,213 @@
-# Homework Assignment IV: Hash Function Design & Observation (C/C++ Version)
+好的，我幫你把剛才的 README 全部翻譯成中文版本，保持專業且適合課程提交：
 
-This assignment focuses on the design and observation of hash functions using C/C++. 
-Students are expected to implement and analyze the behavior of hash functions, 
-evaluate their efficiency, and understand their applications in computer science.
+---
 
-Developer: Ping-Li,Tien
-Email: billytne0208@gmail.com
+# 作業四：雜湊函式設計與觀察（C/C++ 版本）
 
-## My Hash Function
-### Integer Keys 
-- Formula / pseudocode:
-  ```text
-    long long int h;
-	h = key * 99999839// a large prime number
-		+ 1234567; // an arbitrary c
-    if (h < 0)h = -h;// ensure non-negative
-	key = static_cast<int>(h);
-    return key % m;  // basic division method
-  ```
-- Rationale:    
-  1.乘以大質數 : 打破 key 與 hash table 大小 m 的整除規律，避免像 21, 31, 41 這種鍵值落在同一個槽位。  
-  2.加上偏移常數 : 增加額外變化，讓不同 key 的結果更不容易出現相同索引。  
-  3.取絕對值 : 保證散列結果為非負，避免負數 modulo 導致索引錯誤。  
+本作業聚焦於使用 C/C++ 設計與觀察雜湊（hash）函式。
+學生需實作 hash 函式、分析其行為、評估效率，並了解其在電腦科學中的應用。
 
-### Non-integer Keys
-- Formula / pseudocode:
-  ```text
-  unsigned long hash = 0
-  // 將每個字元累加，乘以質數，形成散列值
-	for (char ch : str) {
-	hash = hash * 31 + static_cast<unsigned long>(ch); // a common choice is 31
-	}
-	hash = hash * 99999839 + 1234567; // a large prime number and an arbitrary c
-	if (hash < 0) hash = (-1)*hash; // ensure non-negative
-	return static_cast<int>(hash % m);  // basic division method
-  ```
-- Rationale:   
-  1.字元累加與基數乘法：將每個字元都納入計算，並乘以常用基數 31，使字串中即使只有一個字元不同，也會產生不同的 hash 值，避免順序相似的字串落在同一槽位。  
-  2.乘以大質數並加上偏移常數：乘以大質數 99999839 並加上 1234567，打破與 hash table 大小 m 的整除規律，增加散列結果的變化，使不同字串更不容易出現相同索引。  
-  3.取絕對值：保證散列結果為非負，避免因整數溢出或負數 modulo 導致索引錯誤。  
+**開發者:** 田秉立 (Ping-Li, Tien)
+**電子郵件:** billytne0208@gmail.com
 
-## Experimental Setup
-- Table sizes tested (m): 10, 11, 37
-- Test dataset:
-  - Integers: 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60
-  - Strings: "cat", "dog", "bat", "cow", "ant", "owl", "bee", "hen", "pig", "fox"
-- Compiler: GCC and G++
-- Standard: C23 and C++23
+---
 
-## Results
-| Table Size (m) | Index Sequence         | Observation              |
-|----------------|------------------------|--------------------------|
-| 10             | 1, 2, 3, 4, ...        | Pattern repeats every 10 |
-| 11             | 10, 0, 1, 2, ...       | More uniform             |
-| 37             | 20, 21, 22, 23, ...    | Near-uniform             |
+## 1. 我的雜湊函式
 
-## Compilation, Build, Execution, and Output
+### 1.1 整數鍵（Integer Keys）
 
-### Compilation
-- The project uses a comprehensive Makefile that builds both C and C++ versions with proper flags:
-  ```bash
-  # Build both C and C++ versions
-  make all
-  
-  # Build only C version
-  make c
-  
-  # Build only C++ version
-  make cxx
-  ```
+**公式 / 偽程式碼:**
 
-### Manual Compilation (if needed)
-- Command for C:
-  ```bash
-  gcc -std=c23 -Wall -Wextra -Wpedantic -g -o C/hash_function C/main.c C/hash_fn.c
-  ```
-- Command for C++:
-  ```bash
-  g++ -std=c++23 -Wall -Wextra -Wpedantic -g -o CXX/hash_function_cpp CXX/main.cpp CXX/hash_fn.cpp
-  ```
+```cpp
+long long int h;
+h = key * 99999839 // 大質數
+    + 1234567;     // 任意常數
+if (h < 0) h = -h; // 確保非負
+key = static_cast<int>(h);
+return key % m;     // 取模作為索引
+```
 
-### Clean Build Files
-- Remove all compiled files:
-  ```bash
-  make clean
-  ```
+**設計理由:**
 
-### Execution
-- Run the compiled binary:
-  ```bash
-  ./hash_function
-  ```
-  or
-  ```bash
-  ./hash_function_cpp
-  ```
+1. **乘以大質數**：打破 key 與表格大小 `m` 的整除規律，避免像 21、31、41 等鍵值落在同一槽位。
+2. **加上偏移常數**：增加變化，使不同 key 的結果更不易碰撞。
+3. **取絕對值**：確保索引非負，避免 modulo 出現負數錯誤。
 
-### Result Snapshot
-- Example output for integers:
-  ```
-  === Hash Function Observation (C Version) ===
+---
 
-  === Table Size m = 10 ===
-  Key     Index
-  -----------------
-  21      1
-  22      2
-  ...
+### 1.2 非整數鍵（字串 String Keys）
 
-  === Table Size m = 11 ===
-  Key     Index
-  -----------------
-  21      10
-  22      0
-  ...
+**公式 / 偽程式碼:**
 
-  === Table Size m = 37 ===
-  Key     Index
-  -----------------
-  21      21
-  22      22
-  ...
+```cpp
+unsigned long hash = 0;
+// 將每個字元累加並乘以基數
+for (char ch : str) {
+    hash = hash * 31 + static_cast<unsigned long>(ch);
+}
+hash = hash * 99999839 + 1234567; // 大質數 + 常數
+if (hash < 0) hash = -hash;       // 確保非負
+return static_cast<int>(hash % m);
+```
 
-  === Hash Function Observation (C++ Version) ===
+**設計理由:**
 
-  === Table Size m = 10 ===
-  Key     Index
-  -----------------
-  21      1
-  22      2
-  ...
+1. **字元累加與基數乘法**：即使字串只有一個字元不同，也會產生不同 hash 值，避免順序相似字串落在同一槽位。
+2. **乘以大質數並加偏移常數**：打破與表格大小 `m` 的整除規律，提高散列結果變化，降低碰撞。
+3. **取絕對值**：避免整數溢位或負數 modulo 導致索引錯誤。
 
-  === Table Size m = 11 ===
-  Key     Index
-  -----------------
-  21      10
-  22      0
-  ...
+---
 
-  === Table Size m = 37 ===
-  Key     Index
-  -----------------
-  21      21
-  22      22
-  ...
-  ```
+## 2. 實驗設置
 
-- Example output for strings:
-  ```
-  === String Hash (m = 10) ===
-  Key     Index
-  -----------------
-  cat     0
-  dog     0
-  ...
+* **測試表格大小 (m):** 10, 11, 37
+* **測試資料集:**
 
-  === String Hash (m = 11) ===
-  Key     Index
-  -----------------
-  cat     0
-  dog     0
-  ...
+  * 整數: 21–30, 51–60
+  * 字串: `"cat"`, `"dog"`, `"bat"`, `"cow"`, `"ant"`, `"owl"`, `"bee"`, `"hen"`, `"pig"`, `"fox"`
+* **編譯器:** GCC 與 G++
+* **標準:** C23 與 C++23
 
-  === String Hash (m = 37) ===
-  Key     Index
-  -----------------
-  cat     0
-  dog     0
-  ...
-  ```
+---
 
-- Observations: Outputs align with the analysis, showing better distribution with prime table sizes.
-- Example output for integers:
-  ```
-  Hash table (m=10): [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
-  Hash table (m=11): [10, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-  Hash table (m=37): [20, 21, 22, 23, 24, 25, 26, 27, 28, 29, ...]
-  ```
-- Example output for strings:
-  ```
-  Hash table (m=10): ["cat", "dog", "bat", "cow", "ant", ...]
-  Hash table (m=11): ["fox", "cat", "dog", "bat", "cow", ...]
-  Hash table (m=37): ["bee", "hen", "pig", "fox", "cat", ...]
-  ```
-- Observations: Outputs align with the analysis, showing better distribution with prime table sizes.
+## 3. 結果
 
-## Analysis
-- Prime vs non-prime `m`: Prime table sizes generally result in better distribution and fewer collisions.
-- Patterns or collisions: Non-prime table sizes tend to produce repetitive patterns, leading to more collisions.
-- Improvements: Use a prime table size and a well-designed hash function to enhance distribution.
+| 表格大小 (m) | 索引序列                | 觀察        |
+| -------- | ------------------- | --------- |
+| 10       | 6, 1, 2, 3, ...     | 模式幾乎每 10 重複 |
+| 11       | 10, 0, 6, 1, ...    | 分布更均勻     |
+| 37       | 2, 29, 16, 3, ...  | 分布接近均勻    |
 
-## Reflection
-1. Designing hash functions requires balancing simplicity and effectiveness to minimize collisions.
-2. Table size significantly impacts the uniformity of the hash distribution, with prime sizes performing better.
-3. The design using a prime table size and a linear transformation formula produced the most uniform index sequence.
+**觀察結論:**
+質數大小的表格分布更均勻；非質數表格容易出現重複模式，增加碰撞。
+
+---
+
+## 4. 編譯、建置與執行
+
+### 4.1 使用 Makefile
+
+```bash
+# 同時建置 C 與 C++ 版本
+make all
+
+# 僅建置 C 版本
+make c
+
+# 僅建置 C++ 版本
+make cxx
+```
+
+### 4.2 手動編譯（如需要）
+
+* **C 版本:**
+
+```bash
+gcc -std=c23 -Wall -Wextra -Wpedantic -g -o C/hash_function C/main.c C/hash_fn.c
+```
+
+* **C++ 版本:**
+
+```bash
+g++ -std=c++23 -Wall -Wextra -Wpedantic -g -o CXX/hash_function_cpp CXX/main.cpp CXX/hash_fn.cpp
+```
+
+### 4.3 清除編譯檔
+
+```bash
+make clean
+```
+
+### 4.4 執行
+
+```bash
+./hash_function          # C 版本
+./hash_function_cpp      # C++ 版本
+```
+
+---
+
+## 5. 範例輸出
+
+### 5.1 整數
+
+```
+=== Hash 函式觀察 (C 版本) ===
+
+=== 表格大小 m = 10 ===
+Key     Index
+-----------------
+21      6
+22      1
+23      2
+...
+
+=== 表格大小 m = 11 ===
+Key     Index
+-----------------
+21      10
+22      0
+23      6
+...
+
+=== 表格大小 m = 37 ===
+Key     Index
+-----------------
+21      2
+22      29
+23      16
+...
+```
+
+### 5.2 字串
+
+```
+=== 字串 Hash (m = 10) ===
+Key     Index
+-----------------
+cat     3
+dog     3
+bat     6
+...
+
+=== 字串 Hash (m = 11) ===
+Key     Index
+-----------------
+cat     3
+dog     5
+bat     5
+...
+
+=== 字串 Hash (m = 37) ===
+Key     Index
+-----------------
+cat     18
+dog     30
+bat     0
+...
+```
+
+---
+
+## 6. 分析
+
+* **質數 vs 非質數表格大小:**
+  質數表格分布均勻、碰撞較少；非質數表格容易出現重複模式。
+
+* **碰撞與模式:**
+  非質數表格容易產生重複索引模式，增加碰撞風險。
+
+* **減少碰撞的方法:**
+
+1. 使用質數表格大小
+2. 設計良好的 hash 函式（bit-mixing、質數乘法、偏移常數）
+3. 必要時使用雙雜湊或鏈結法處理碰撞
+
+---
+
+## 7. 反思
+
+1. 設計 hash 函式需在 **簡單性與效果** 間取得平衡，以降低碰撞。
+2. 表格大小對分布均勻性影響很大，質數表現最佳。
+3. 使用大質數乘法與偏移常數可產生最均勻的索引序列。
+4. 結果觀察顯示，良好的 hash 函式搭配合適的表格大小，能有效提升 hash table 的性能。
