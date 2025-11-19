@@ -22,6 +22,11 @@
  */
 int myHashInt(int key, int m) {
     // TODO: replace with your own design
+    long long int h;
+	h = key * 99999839// a large prime number
+		+ 1234567; // an arbitrary c
+    if (h < 0)h = -h;// ensure non-negative
+	key = static_cast<int>(h);
     return key % m;  // basic division method
 }
 
@@ -34,5 +39,12 @@ int myHashInt(int key, int m) {
 int myHashString(const std::string& str, int m) {
     unsigned long hash = 0;
     // TODO: replace with your own design
+
+    // 將每個字元累加，乘以質數，形成散列值
+    for (char ch : str) {
+		hash = hash * 31 + static_cast<unsigned long>(ch); // a common choice is 31
+    }
+	hash = hash * 99999839 + 1234567; // a large prime number and an arbitrary c
+	if (hash < 0) hash = (-1)*hash; // ensure non-negative
     return static_cast<int>(hash % m);  // basic division method
 }
