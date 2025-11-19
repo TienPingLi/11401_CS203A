@@ -19,9 +19,9 @@ Email: billytne0208@gmail.com
     return key % m;  // basic division method
   ```
 - Rationale:
-  -1.乘以大質數 : 打破 key 與 hash table 大小 m 的整除規律，避免像 21, 31, 41 這種鍵值落在同一個槽位。
-  -2.加上偏移常數 : 增加額外變化，讓不同 key 的結果更不容易出現相同索引。
-  -3.取絕對值 : 保證散列結果為非負，避免負數 modulo 導致索引錯誤
+  1.乘以大質數 : 打破 key 與 hash table 大小 m 的整除規律，避免像 21, 31, 41 這種鍵值落在同一個槽位。  
+  2.加上偏移常數 : 增加額外變化，讓不同 key 的結果更不容易出現相同索引。  
+  3.取絕對值 : 保證散列結果為非負，避免負數 modulo 導致索引錯誤。  
 
 ### Non-integer Keys
 - Formula / pseudocode:
