@@ -16,6 +16,12 @@
 #include "hash_fn.h"
 #include <stdio.h>
 
+/**
+ * @brief 計算整數鍵值的雜湊索引
+ * @param key 整數鍵
+ * @param m 雜湊表大小
+ * @return 雜湊後的索引值
+ */
 int myHashInt(int key, int m) {
     long long int h;
     h = (long long)key * 99999839  // 大質數
@@ -25,7 +31,12 @@ int myHashInt(int key, int m) {
     return key % m;                // 取模得到索引
 }
 
-
+/**
+ * @brief 計算字串鍵值的雜湊索引
+ * @param str 字串鍵
+ * @param m 雜湊表大小
+ * @return 雜湊後的索引值
+ */
 int myHashString(const char* str, int m) {
     unsigned long hash = 0;
     int i = 0;
