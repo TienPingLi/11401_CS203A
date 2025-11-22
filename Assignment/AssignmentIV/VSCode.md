@@ -18,7 +18,9 @@
 
 ### ◆ 心得
 
-VS Code 雖然整合了 Git 功能，但實際使用上仍可能受限於 Token、權限、或設定檔的細節。對我來說，GitHub Desktop 反而更適合作為入門的版本控制工具，能大幅降低設定成本。
+VS Code 雖然整合了 Git 功能，但實際使用上仍可能受限於 Token、權限、或設定檔的細節。對我來說，GitHub Desktop 反而更適合作為入門的版本控制工具，能大幅降低設定成本。  
+
+<img width="1920" height="1200" alt="螢幕擷取畫面 2025-11-18 134709" src="https://github.com/user-attachments/assets/ac6b45e4-d0be-4768-8c75-ffd7a95f1763" />
 
 ---
 
@@ -36,7 +38,9 @@ VS2022 內建完整的 MSVC 工具鏈，不需要額外設定執行環境，一�
 
 ### ◆ 心得
 
-VS Code 是一個輕量且彈性的 IDE，但對 C++ 來說仍需要額外設定 compiler、路徑與偵錯工具，對我而言不太友善。反而是 VS2022 的整合度較高，在做 C++ 專案時更省時省力。
+VS Code 是一個輕量且彈性的 IDE，但對 C++ 來說仍需要額外設定 compiler、路徑與偵錯工具，對我而言不太友善。反而是 VS2022 的整合度較高，在做 C++ 專案時更省時省力。  
+
+<img width="1920" height="1200" alt="螢幕擷取畫面 2025-11-22 195007" src="https://github.com/user-attachments/assets/3403c4f4-1248-4ee3-a8d8-d3df22ff0e85" />
 
 ---
 
