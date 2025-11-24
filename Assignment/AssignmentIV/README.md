@@ -136,7 +136,7 @@ make clean
 
 <img width="287" height="250" alt="image" src="https://github.com/user-attachments/assets/f7419ca9-29e5-4ef6-a919-77ed9ed96da2" />
 <img width="287" height="242" alt="image" src="https://github.com/user-attachments/assets/b2f34d71-888b-4ff1-b650-c30766e6ab9e" />
-<img width="552" height="492" alt="image" src="https://github.com/user-attachments/assets/5164653d-c492-434f-804f-2baa51b06c2e" />
+<img width="287" height="255" alt="image" src="https://github.com/user-attachments/assets/5164653d-c492-434f-804f-2baa51b06c2e" />
 
 ## 6. 分析
 
