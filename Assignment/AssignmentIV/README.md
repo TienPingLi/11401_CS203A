@@ -126,7 +126,10 @@ make clean
 ## 5. 範例輸出
 
 ### 5.1 整數   
-<img width="118" height="528" alt="螢幕擷取畫面 2025-11-24 094153" src="https://github.com/user-attachments/assets/30aa0266-4589-4a94-9cdb-ef5a8b7d90a1" />
+<img width="247" height="428" alt="image" src="https://github.com/user-attachments/assets/f5f83fc3-6e44-4885-9daf-a3bf77926aaf" />
+<img width="252" height="426" alt="image" src="https://github.com/user-attachments/assets/a95e3619-cec1-4263-88ae-f7567825994e" />
+<img width="255" height="428" alt="image" src="https://github.com/user-attachments/assets/5312e1ed-af30-4d68-8ec2-153e9a093337" />
+
 
 
 ### 5.2 字串
