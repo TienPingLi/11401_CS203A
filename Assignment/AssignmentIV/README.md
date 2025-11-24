@@ -134,33 +134,9 @@ make clean
 
 ### 5.2 字串
 
-```
-=== 字串 Hash (m = 10) ===
-Key     Index
------------------
-cat     3
-dog     3
-bat     6
-...
-
-=== 字串 Hash (m = 11) ===
-Key     Index
------------------
-cat     3
-dog     5
-bat     5
-...
-
-=== 字串 Hash (m = 37) ===
-Key     Index
------------------
-cat     18
-dog     30
-bat     0
-...
-```
-
----
+<img width="287" height="250" alt="image" src="https://github.com/user-attachments/assets/f7419ca9-29e5-4ef6-a919-77ed9ed96da2" />
+<img width="287" height="242" alt="image" src="https://github.com/user-attachments/assets/b2f34d71-888b-4ff1-b650-c30766e6ab9e" />
+<img width="552" height="492" alt="image" src="https://github.com/user-attachments/assets/5164653d-c492-434f-804f-2baa51b06c2e" />
 
 ## 6. 分析
 
