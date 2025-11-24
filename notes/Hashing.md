@@ -1,11 +1,4 @@
-了解！你給的是 **Array 的 Markdown 模板**，你希望我把「Hashing 精華筆記」也改成 **完全相同格式、排版、標題風格** 的版本。
-
-我已經依照你的模板風格重新整理 ——
-**分段清楚、# 標題、--- 分隔、條列式、簡潔但完整，** 和你示範的 Array 筆記一樣的格式。
-
----
-
-# **Hashing（雜湊）精華筆記**
+# **Hashing（雜湊）筆記**
 
 ---
 
@@ -474,14 +467,4 @@ m = bucket 數量
 * Load Factor > 0.75 → rehash
 * Chaining vs Open Addressing
 
----
-
-如果你想，我也可以把這份筆記：
-
-✅ 再加上程式碼示範
-✅ 再加上圖示（ASCII 或插圖）
-✅ 做成 GitHub README 風格
-✅ 做成 PDF 或 Notion 筆記版
-
-要我加強哪個部分嗎？
 
