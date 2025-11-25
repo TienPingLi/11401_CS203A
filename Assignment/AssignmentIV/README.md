@@ -85,13 +85,13 @@ return static_cast<int>(hash % m);
 
 ```bash
 # 同時建置 C 與 C++ 版本
-make all
+Makefile.bat all
 
 # 僅建置 C 版本
-make c
+Makefile.bat c
 
 # 僅建置 C++ 版本
-make cxx
+Makefile.bat cxx
 ```
 
 ### 4.2 手動編譯（如需要）
@@ -99,26 +99,26 @@ make cxx
 * **C 版本:**
 
 ```bash
-gcc -std=c23 -Wall -Wextra -Wpedantic -g -o C/hash_function C/main.c C/hash_fn.c
+gcc.exe -std=c23 -Wall -Wextra -Wpedantic -g -o C/hash_function C/main.c C/hash_fn.c
 ```
 
 * **C++ 版本:**
 
 ```bash
-g++ -std=c++23 -Wall -Wextra -Wpedantic -g -o CXX/hash_function_cpp CXX/main.cpp CXX/hash_fn.cpp
+g++.exe -std=c++23 -Wall -Wextra -Wpedantic -g -o CXX/hash_function_cpp CXX/main.cpp CXX/hash_fn.cpp
 ```
 
 ### 4.3 清除編譯檔
 
 ```bash
-make clean
+Makefile.bat clean
 ```
 
 ### 4.4 執行
 
 ```bash
-./hash_function          # C 版本
-./hash_function_cpp      # C++ 版本
+./hash_function.exe          # C 版本
+./hash_function_cpp.exe      # C++ 版本
 ```
 
 ---
