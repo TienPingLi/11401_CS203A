@@ -228,15 +228,20 @@ Unsorted → 找 min → 分離 → 接到 Sorted
 
 ---
 
-## 7. Array vs Linked List（考試必背對照）
+## 陣列與鏈結串列的比較（Comparison: Array vs. Linked List）
 
-| 項目      | Array  | Linked List |
-| ------- | ------ | ----------- |
-| 記憶體     | 連續     | 非連續         |
-| 存取      | `O(1)` | `O(n)`      |
-| 插入 / 刪除 | `O(n)` | `O(1)`      |
-| 動態大小    | 困難     | 容易          |
+| **操作 (Operation)** | **動態陣列 (Array, Dynamic)** | **鏈結串列 (Linked List)** |
+|------------------------|-------------------------------|-----------------------------|
+| **依索引存取 (Access by index)** | O(1) | O(n)（必須逐一遍歷 / must traverse） |
+| **搜尋 (Search)** | O(n) | O(n) |
+| **在開頭插入 (Insert at front)** | O(n) | O(1) |
+| **在中間插入 (Insert at middle)** | O(n) | O(n) |
+| **在結尾插入 (Insert at end)** | O(1)（攤銷時間 / amortized） | O(n)\* 或 O(1)\*\* |
+| **刪除 (Delete)** | O(n) | O(n) 或 O(1)\*\*\*** |
 
+\* 若為單向鏈結串列（singly linked list），在結尾插入需遍歷整個串列 → O(n)  
+\*\* 若為雙向鏈結串列（doubly linked list）且尾端指標已知 → O(1)  
+\*\*\* 若已知節點指標（pointer to node），刪除可為 O(1)
 ---
 
 ## ✨ 本章總結
