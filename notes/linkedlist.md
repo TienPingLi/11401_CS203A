@@ -227,9 +227,8 @@ Unsorted → 找 min → 分離 → 接到 Sorted
 * 空間複雜度：`O(1)`
 
 ---
-
-## 陣列與鏈結串列的比較（Comparison: Array vs. Linked List）      
-
+## 7. Linked List and Array
+# 陣列與鏈結串列的比較（Comparison: Array vs. Linked List）      
 
 | **操作 (Operation)** | **動態陣列 (Array, Dynamic)** | **鏈結串列 (Linked List)** |
 |------------------------|-------------------------------|-----------------------------|
