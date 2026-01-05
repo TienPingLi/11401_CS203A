@@ -243,10 +243,12 @@ BST property:
 4. **Red-Black Tree**：高度平衡但更鬆散（保證 log n）
 
 ---
-本筆記/專案的部分內容係輔助生成自人工智慧（AI）。筆記內容已由本人進行人工審核、修正與驗證，以確保其準確性與可靠性。儘管如此，使用者仍應自行評估資訊的正確性。
+
 
 ## #19 Reference
 
 * [https://www.cs.usfca.edu/~galles/visualization/Algorithms.html](https://www.cs.usfca.edu/~galles/visualization/Algorithms.html)
 * [https://kubokovac.eu/gnarley-trees/](https://kubokovac.eu/gnarley-trees/)
 * 搜尋關鍵字：AVL、BST、Red-Black、B-Tree、B+ Tree
+---
+本筆記/專案的部分內容係輔助生成自人工智慧（AI）。筆記內容已由本人進行人工審核、修正與驗證，以確保其準確性與可靠性。儘管如此，使用者仍應自行評估資訊的正確性。
