@@ -157,8 +157,15 @@ Makefile.bat clean
 ## 7. 反思
 
 1. 在設計程式的過程中有用了很多方法，例如bits位移等等方法，但效果都沒有直接用四則運算均勻。
-   <img width="213" height="113" alt="image" src="https://github.com/user-attachments/assets/0f520666-5e83-4410-8c26-a011eaa71a58" />
 
-2. 表格大小對分布均勻性影響很大，質數表現最佳。
-3. 使用大質數乘法與偏移常數可產生最均勻的索引序列。
-4. 結果觀察顯示，良好的 hash 函式搭配合適的表格大小，能有效提升 hash table 的性能。
+以下述程式舉例:
+
+    <<img width="343" height="495" alt="image" src="https://github.com/user-attachments/assets/a14c9d09-ec55-43d8-82d2-edf61019457b" />
+雖然用了許多進階用法但還是得到了Collision較多的結果
+
+<img width="376" height="654" alt="image" src="https://github.com/user-attachments/assets/aa7ff41a-eeaa-4007-9a53-6264b020f935" />
+
+
+3. 表格大小對分布均勻性影響很大，質數表現最佳。
+4. 使用大質數乘法與偏移常數可產生最均勻的索引序列。
+5. 結果觀察顯示，良好的 hash 函式搭配合適的表格大小，能有效提升 hash table 的性能。
