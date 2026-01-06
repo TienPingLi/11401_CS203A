@@ -159,8 +159,7 @@ Makefile.bat clean
 1. 在設計程式的過程中有用了很多方法，例如bits位移等等方法，但效果都沒有直接用四則運算均勻。
 
 以下述程式舉例:
-
-    <<img width="343" height="495" alt="image" src="https://github.com/user-attachments/assets/a14c9d09-ec55-43d8-82d2-edf61019457b" />
+<<img width="343" height="495" alt="image" src="https://github.com/user-attachments/assets/a14c9d09-ec55-43d8-82d2-edf61019457b" />
 雖然用了許多進階用法但還是得到了Collision較多的結果
 
 <img width="376" height="654" alt="image" src="https://github.com/user-attachments/assets/aa7ff41a-eeaa-4007-9a53-6264b020f935" />
