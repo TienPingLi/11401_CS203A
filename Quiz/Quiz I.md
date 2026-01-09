@@ -1,5 +1,4 @@
-
-https://cdn.discordapp.com/attachments/1438412236539428866/1459155342285082845/IMG_4390.jpg?ex=69623fcf&is=6960ee4f&hm=ab4fc38bd633f222401aeb4c930d54ea42580f04c50b8bc4862a4ca5654eb625&
-https://cdn.discordapp.com/attachments/1438412236539428866/1459155342649983077/IMG_4391.jpg?ex=69623fcf&is=6960ee4f&hm=1a9c3d75577ec1ddb0debc99ea6a3a1409638e9fdae06c1969449d9248d682a7&
-https://cdn.discordapp.com/attachments/1438412236539428866/1459155342985396411/IMG_4392.jpg?ex=69623fcf&is=6960ee4f&hm=690122a6a673f5aee5f30fab7420a100183da07a26fe49b2befcc6ee05c246b9&
-https://cdn.discordapp.com/attachments/1438412236539428866/1459155343283327028/IMG_4393.jpg?ex=69623fcf&is=6960ee4f&hm=dfaf6e3fe38cd01be704fd7dece8a210c7c5a581ce3ac23e9cc3a01f7daa6f7c&
+![IMG_4390](https://github.com/user-attachments/assets/2c6b35ed-1df1-4470-94a8-9e839a92ad1a)
+![IMG_4391](https://github.com/user-attachments/assets/dc17dbb2-286a-4aad-9b97-dcfc6c0637eb)
+![IMG_4392](https://github.com/user-attachments/assets/99be1580-2e19-43b3-85b5-9983ad8a4580)
+![IMG_4393](https://github.com/user-attachments/assets/6db0c381-0e0b-4f42-9166-a38fe5b352a4)
